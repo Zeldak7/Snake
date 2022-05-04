@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Snake</title>
+<link href="css/snake.css" rel="stylesheet">
+
+</head>
+<body background="img/bb.jpg"> 
+
+
+
+<button name="start_button" type="button" onclick="showDiv()">
+Start Game
+</button>
+<h1>Snake</h1>
+
+<div id="example" style="display:none" class="more">
+
+<canvas class="canvas" width="800" height="800" style="background-color: green"></canvas>
+<p> Verwende die Pfeiltasten um die Snake zu bewegen ←↑→
+</p>
+</body>
+<h2>HIGH SCORES</h2>
+ <ol id="highScores"></ol>
+<script type="text/javascript">
+
+
+
+var background = new Image();
+background.src = "img/gras.png";
+background.onload = function(){
+    ctx.drawImage(background,0,0);  
+ 
+	 	
+}
+
+function showDiv() {
+   document.getElementById('example').style.display = "block";
+   	   // var mmusic= new Audio();
+	 //mmusic.src="sound/music.mp3";
+	// mmusic.play();
+	
+}
+
+
+
+ </script>
+<script type="text/javascript" src="highscores.js"></script>
+<script type="text/javascript" src="snake.js"></script>
+<script type="text/javascript" src="aisnake.js"></script>
+<script type="text/javascript" src="fruit.js"></script>
+<script type="text/javascript" src="messi.js"></script>
+<script type="text/javascript" src="draw.js"></script>
+
+<body onload>
+
+  <h1>Score: <span class="score"></span></h1>
+ 
+</div>
+</body>
+
+
+
+</html>
