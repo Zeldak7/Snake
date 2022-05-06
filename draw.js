@@ -11,7 +11,6 @@ showHighScores();
 (function setup() {
 	snake = new Snake();
 	fruit = new Fruit();
-	messi = new Messi();
 	aisnake = new Aisnake();
 	fruit.pickLocation();
 	
@@ -27,34 +26,24 @@ showHighScores();
 		snake.update();
 		aisnake.update();
 		snake.draw();
-		//messi.draw();
 		aisnake.draw();
-		//messi.move();
+	
 		aisnake.move();
 		
 	
 		
 		if (snake.eat(fruit)) {
 			fruit.pickLocation();
-			//if (getRandomIntInclusive(0, 2)==1){
-				
-	          // messi.pickLocation();
-			  //  var mmessi= new Audio();
-	// mmessi.src="sound/messi.mp3";
-	// mmessi.play();
-	//}
+			
 		}
 		
 	    if (aisnake.eat(fruit)){
             fruit.pickLocation();
 		}			
 		
-		//if (snake.meat(messi)) {
-		//	mmessi.play();
-		//}
+	
 	
 
-	  
 		
 		//aisnake.checkCollision();
 		snake.checkCollision();

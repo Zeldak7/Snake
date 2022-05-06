@@ -50,20 +50,7 @@ this.eat=function(fruit) {
    
 }	
 
-this.meat=function(messi) {  //Wenn messi gegessen wird
- if (this.x == messi.x && this.y== messi.y){
-	// var sui= new Audio();
-	 //sui.src="sound/sui.mp3";
-	 //sui.play();
-	 delete messi.x;
-	 delete messi.y;
-	 
-	 this.total=this.total+1;
-	 return true;
- }
-     return false;
-   
-}
+
 
 
 	this.checkCollision= function() {
