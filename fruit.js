@@ -2,6 +2,7 @@ function Fruit() {
   this.x;
   this.y;
   this.tail=[];
+  scale=50;
   
   this.pickLocation = function() {
     this.y = (Math.floor(Math.random() *columns - 1) + 1) * scale;

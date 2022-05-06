@@ -1,9 +1,9 @@
 const canvas = document.querySelector(".canvas" );
 const ctx = canvas.getContext("2d");
-var scale=70;
+var scale=50;
 var gamespeed=300;	
-const rows=800/scale;
-const columns=800/scale;
+const rows=1000/scale;
+const columns=1000/scale;
 var snake;
 
 showHighScores();
@@ -45,7 +45,7 @@ showHighScores();
 	
 
 		
-		//aisnake.checkCollision();
+		aisnake.checkCollision();
 		snake.checkCollision();
 		document.querySelector('.score')
 		.innerText=snake.total;

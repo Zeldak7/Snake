@@ -1,6 +1,6 @@
 function Snake() {
-	this.x=0;
-	this.y=0;
+	this.x=150;
+	this.y=150;
 	this.xspeed=scale*1;
 	this.yspeed=0;
 	this.total=0;
@@ -95,24 +95,28 @@ this.eat=function(fruit) {
             }
 				
 		}
+		console.log(this.x);
+		console.log(this.y);
 		
 		
-		if (this.x >= canvas.width) {
+		if (this.x > canvas.width) {
 			this.gameover();
 		}
 		
-		if (this.y >= canvas.height) {
-			checkHighScore(this.total);			   
-              this.gameover();
-		
-		if (this.x < 0-scale){
-			checkHighScore(this.total);			   
-               this.gameover();
+		if (this.y > canvas.height) {
+			//checkHighScore(this.total);			   
+			this.gameover();
+		}
+
+
+		if (this.x< 0-scale){
+			//checkHighScore(this.total);			   
+			this.gameover();
 		}
 		
 		if (this.y < 0-scale) {
-			checkHighScore(this.total);			   
-              this.gameover();
+			//checkHighScore(this.total);			   
+			this.gameover();
 		}
 	}
 	
@@ -122,12 +126,12 @@ this.eat=function(fruit) {
                this.tail=[];
 			   this.x=0;
 			   this.y=0;
-		
+		       alert("Game over");
 	}
 	
 	
 }
-}
+
 
 
 
