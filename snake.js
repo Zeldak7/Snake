@@ -46,25 +46,22 @@ function Snake() {
 				this.xspeed = 0;
 				this.yspeed = scale * 1;
 				direction1 = "DOWN";
-
 				break;
 			case 'Left':
 				imgh.src = "img/headL.png";
 				this.xspeed = -scale * 1;
 				this.yspeed = 0;
 				direction1 = "LEFT";
-
 				break;
 			case 'Right':
 				imgh.src = "img/headR.png";
 				this.xspeed = scale * 1;
 				this.yspeed = 0;
 				direction1 = "Right";
-
 				break;
 		}
 	}
-
+	
 	this.eat = function (fruit) {
 		if (this.x == fruit.x && this.y == fruit.y) { //Wenn frucht aufgehoben wird
 			this.total++;
