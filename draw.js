@@ -14,7 +14,6 @@ function setup() {
 
 	window.setInterval(() => {
 
-
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.drawImage(background, 0, 0);
 		fruit.draw();
@@ -52,7 +51,6 @@ window.addEventListener('keydown', ((evt) => {
 	const direction = evt.key.replace('Arrow', '');
 	snake.changeDirection(direction);
 }));
-
 
 function getRandomIntInclusive(min, max) {
 	min = Math.ceil(min);
