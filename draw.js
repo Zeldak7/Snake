@@ -5,11 +5,12 @@ var gamespeed = 150;
 const rows = 500 / scale;
 const columns = 500 / scale;
 var snake;
+var z=0;
 
 function setup() {
 	snake = new Snake();
 	fruit = new Fruit();
-	aisnake = new Aisnake();
+    block = new Block();
 	fruit.pickLocation();
 
 	window.setInterval(() => {
@@ -18,28 +19,13 @@ function setup() {
 		ctx.drawImage(background, 0, 0);
 		fruit.draw();
 		snake.update();
-		aisnake.update();
 		snake.draw();
-		aisnake.draw();
-		aisnake.move();
+		block.draw();
 
 		if (snake.eat(fruit)) {
 			fruit.pickLocation();
+			block.addBlock();
 		}
-
-		if (aisnake.eat(fruit)) {
-			fruit.pickLocation();
-		}
-
-		if (snake.eatsnake(aisnake)) {
-			snake.gameover();
-		}
-
-		if (aisnake.eatsnake(snake)) {
-			aisnake.gameover();
-		}
-
-		aisnake.checkCollision();
 		snake.checkCollision();
 		document.querySelector('.score')
 			.innerText = snake.total;

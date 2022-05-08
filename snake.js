@@ -8,8 +8,7 @@ function Snake() {
 	var hscore = 0;
 	var imgt = new Image();
 	var imgh = new Image();
-	imgh.src = "img/headR.png";
-	imgt.src = "img/tail.png";
+	imgh.src = "img/head.png";
 
 	this.draw = function () {
 
@@ -17,7 +16,7 @@ function Snake() {
 		imgt.onload = this.draw;
 
 		for (let i = 0; i < this.tail.length; i++) {
-			ctx.drawImage(imgt, this.tail[i].x, this.tail[i].y, scale, scale);
+			ctx.drawImage(imgh, this.tail[i].x, this.tail[i].y, scale, scale);
 		}
 		ctx.drawImage(imgh, this.x, this.y, scale, scale);
 	}
@@ -36,32 +35,27 @@ function Snake() {
 
 		switch (direction) {
 			case 'Up':
-				imgh.src = "img/headU.png";
 				this.xspeed = 0;
 				this.yspeed = -scale * 1;
 				direction1 = "UP";
 				break;
 			case 'Down':
-				imgh.src = "img/headD.png";
 				this.xspeed = 0;
 				this.yspeed = scale * 1;
 				direction1 = "DOWN";
 				break;
 			case 'Left':
-				imgh.src = "img/headL.png";
 				this.xspeed = -scale * 1;
 				this.yspeed = 0;
 				direction1 = "LEFT";
 				break;
 			case 'Right':
-				imgh.src = "img/headR.png";
 				this.xspeed = scale * 1;
 				this.yspeed = 0;
 				direction1 = "Right";
 				break;
 		}
 	}
-	
 	this.eat = function (fruit) {
 		if (this.x == fruit.x && this.y == fruit.y) { //Wenn frucht aufgehoben wird
 			this.total++;
@@ -69,16 +63,6 @@ function Snake() {
 		}
 		return false;
 
-	}
-
-	this.eatsnake = function (aisnake) {
-		for (var i = 0; i < aisnake.tail.length; i++) {
-			if (this.x == aisnake.tail[i].x &&
-				this.y == aisnake.tail[i].y) {
-				return true
-			}
-			return false;
-		}
 	}
 
 	this.checkCollision = function () {
@@ -89,8 +73,6 @@ function Snake() {
 				this.gameover();
 			}
 		}
-		console.log(aisnake.y);
-		console.log(aisnake.x);
 		if (this.x >= canvas.width) {
 			this.gameover();
 		}
@@ -103,6 +85,12 @@ function Snake() {
 		if (this.y < 0) {
 			this.gameover();
 		}
+         
+        for (i=0; i<50; i++){
+              if (this.x == block.xarr[i] && this.y == block.yarr[i]){
+				this.gameover();  
+			  }   
+		}
 	}
 	this.gameover = function () {
 		this.total = 0;
@@ -111,6 +99,9 @@ function Snake() {
 		this.y = 0;
 		this.xspeed = scale * 1;
 		this.yspeed = 0;
+		fruit.pickLocation();
+		delete block;
+		block = new Block();
 		alert("Game over");
 	}
 }
