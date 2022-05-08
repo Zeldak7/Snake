@@ -15,14 +15,8 @@
 <body> 
 
 
-
-
-
-
 <div class="container">
-
     <div class="vertical-center">
-      
       <button id="mybutton" name="start_button" class="glow-on-hover" type="button" onclick="showDiv()">
         <h2> Start Game</h2>
       </button>
@@ -33,16 +27,21 @@
 
 <div id="example" class="more" style="display:none"> 
 
-<canvas class="canvas" width="500" height="500" ></canvas>
-<p> Verwende die Pfeiltasten um die Snake zu bewegen ←↑→
-</p> 
+<canvas class="canvas" width="501" height="501" ></canvas>
+
 </body>
 
-
+ <!--   
 <h2>HIGH SCORES</h2>
- <ol id="highScores"></ol>
 
+ 
+<ol id="highScores"></ol>
+
+ 
  <script type="text/javascript" src="highscores.js"></script>
+
+
+ -->
  <script type="text/javascript" src="snake.js"></script>
  <script type="text/javascript" src="aisnake.js"></script>
  <script type="text/javascript" src="fruit.js"></script>
@@ -51,14 +50,10 @@
 
 <script type="text/javascript">
 
-
-
 var background = new Image();
 background.src = "img/gras.png";
 background.onload = function(){
-    ctx.drawImage(background,0,0);  
- 
-	 	
+    ctx.drawImage(background,0,0);  	
 }
 
 function showDiv() {
@@ -67,15 +62,12 @@ function showDiv() {
   setup();
 }
 
-
-
  </script>
-
 
 <body onload>
 
   <h1>Score: <span class="score"></span></h1>
-  <h1>Highscore: <span class="score"></span></h1>
+ 
 </div>
 </body>
 

@@ -6,19 +6,11 @@ const rows = 500 / scale;
 const columns = 500 / scale;
 var snake;
 
-showHighScores();
-
-
-
-
 function setup() {
 	snake = new Snake();
 	fruit = new Fruit();
 	aisnake = new Aisnake();
 	fruit.pickLocation();
-
-
-
 
 	window.setInterval(() => {
 
@@ -34,7 +26,6 @@ function setup() {
 
 		if (snake.eat(fruit)) {
 			fruit.pickLocation();
-
 		}
 
 		if (aisnake.eat(fruit)) {

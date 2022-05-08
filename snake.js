@@ -21,19 +21,14 @@ function Snake() {
 		}
 		ctx.drawImage(imgh, this.x, this.y, scale, scale);
 	}
-
 	this.update = function () {
 
 		for (var i = 0; i < this.tail.length - 1; i++) {
 			this.tail[i] = this.tail[i + 1];
 		}
-
 		this.tail[this.total - 1] = { x: this.x, y: this.y };
-
 		this.x = this.x + this.xspeed;
 		this.y = this.y + this.yspeed;
-
-
 
 	}
 	let directionl = "Right";
@@ -70,7 +65,6 @@ function Snake() {
 		}
 	}
 
-
 	this.eat = function (fruit) {
 		if (this.x == fruit.x && this.y == fruit.y) { //Wenn frucht aufgehoben wird
 			this.total++;
@@ -80,30 +74,15 @@ function Snake() {
 
 	}
 
-
 	this.eatsnake = function (aisnake) {
-
 		for (var i = 0; i < aisnake.tail.length; i++) {
-
-
 			if (this.x == aisnake.tail[i].x &&
 				this.y == aisnake.tail[i].y) {
 				return true
 			}
 			return false;
 		}
-
-
-
-
-
-
-
-
 	}
-
-
-
 
 	this.checkCollision = function () {
 		for (var i = 0; i < this.tail.length; i++) {
@@ -115,33 +94,20 @@ function Snake() {
 		}
 		console.log(aisnake.y);
 		console.log(aisnake.x);
-
-
-
 		if (this.x >= canvas.width) {
 			this.gameover();
 		}
-
 		if (this.y >= canvas.height) {
-			checkHighScore(this.total);
 			this.gameover();
 		}
-
-		if (this.x < 0 ) {
-			checkHighScore(this.total);
+		if (this.x < 0) {
 			this.gameover();
 		}
-
-		if (this.y < 0 ) {
-			checkHighScore(this.total);
+		if (this.y < 0) {
 			this.gameover();
 		}
 	}
-
-
-
 	this.gameover = function () {
-		checkHighScore(this.total);
 		this.total = 0;
 		this.tail = [];
 		this.x = 0;
@@ -150,8 +116,6 @@ function Snake() {
 		this.yspeed = 0;
 		alert("Game over");
 	}
-
-
 }
 
 

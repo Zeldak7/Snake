@@ -7,11 +7,9 @@ function Fruit() {
   this.pickLocation = function () {
     this.y = (Math.floor(Math.random() * columns - 1) + 1) * scale;
     this.x = (Math.floor(Math.random() * rows - 1) + 1) * scale;
-
   }
 
   var imgf = new Image();
-
 
   this.draw = function () {
 
