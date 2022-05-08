@@ -12,7 +12,6 @@ function Fruit() {
   var imgf = new Image();
 
   this.draw = function () {
-
     imgf.onload = this.draw;
     ctx.drawImage(imgf, this.x, this.y, scale, scale);
   }
