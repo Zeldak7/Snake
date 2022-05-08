@@ -10,7 +10,6 @@ function Aisnake() {
 	imgt.src = "img/aitail.png";
 
 	this.draw = function () {
-
 		imgh.onload = this.draw;
 		imgt.onload = this.draw;
 
